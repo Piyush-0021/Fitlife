@@ -6,7 +6,7 @@ FitLife is a full-stack fitness and lifestyle web platform that helps users trac
 🔗 https://fitlife21.great-site.net
 
 🧑‍💻 Access Source Code
-You can explore the code right here: 👉 https://github.com/Piyush-0021/Piyush-0021.github.io
+You can explore the code right here: 👉 https://github.com/Piyush-0021/fitlife
 
 📸 Features
 
