@@ -1,0 +1,252 @@
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: url('gym_back1.jpg') center/cover no-repeat fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  padding-top: 60px;
+  position: relative;
+}
+/* Reset all link styles */
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+/* Hamburger Icon */
+.menu-icon {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1001;
+  color: white;
+}
+
+/* Side Navigation */
+.side-nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  /* background-color: rgba(16, 15, 15, 0.352); */
+  background-color: rgba(16, 15, 15, 0.688);
+  overflow-x: hidden;
+  transition: 0.4s;
+  padding-top: 80px;
+  z-index: 1000;
+}
+
+.side-nav.open {
+  width: 250px;
+}
+
+.side-nav .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 36px;
+  text-decoration: none;
+  color: white;
+}
+
+.side-nav a {
+  padding: 12px 32px;
+  text-decoration: none;
+  font-size: 22px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.side-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Heading */
+.main-heading {
+  position: relative;
+  width: 90%;
+  font-size: clamp(28px, 5vw, 60px);
+  color: white;
+  font-weight: bold;
+  font-family: 'Lora', serif;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Cards */
+.level {
+  position: relative;
+  width: 350px;
+  max-width: 90%;
+  height: 500px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.level:hover {
+  transform: scale(1.05);
+}
+
+.beginner {
+  background-image: url('box1img.gif');
+}
+
+.intermediate {
+  background-image: url('deadlift.gif');
+}
+
+.advanced {
+  background-image: url('rope.gif');
+}
+
+/* Overlay */
+.overlay {
+  background: rgba(23, 21, 21, 0.5);
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.overlay h2 {
+  font-size: clamp(22px, 5vw, 28px);
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  font-size: clamp(14px, 3vw, 16px);
+}
+
+/* Back Button */
+.back-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  font-size: clamp(14px, 3vw, 18px);
+}
+
+.back-btn:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .main-heading {
+    font-size: clamp(32px, 6vw, 50px);
+  }
+
+  .container {
+    gap: 40px;
+  }
+
+  .level {
+    width: 320px;
+    height: 480px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 100px;
+  }
+
+  .main-heading {
+    font-size: clamp(28px, 8vw, 40px);
+    margin-bottom: 30px;
+  }
+
+  .container {
+    gap: 30px;
+  }
+
+  .level {
+    width: 280px;
+    height: 420px;
+  }
+
+  .overlay h2 {
+    font-size: clamp(20px, 6vw, 26px);
+  }
+
+  .overlay p {
+    font-size: clamp(13px, 4vw, 15px);
+  }
+
+  .back-btn {
+    margin-top: 30px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 80px;
+  }
+
+  .main-heading {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .level {
+    width: 95%;
+    height: 380px;
+  }
+
+  .overlay h2 {
+    font-size: 22px;
+  }
+
+  .overlay p {
+    font-size: 13px;
+  }
+
+  .back-btn {
+    font-size: 14px;
+  }
+}

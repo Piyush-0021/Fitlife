@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gym Training</title>
+  <link rel="stylesheet" href="gym2.css">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet"> -->
+</head>
+<body>
+
+<!-- Hamburger Menu Icon -->
+<div class="menu-icon" onclick="toggleNav()">&#9776;</div>
+
+<!-- Sliding Navigation -->
+<nav id="sideNav" class="side-nav">
+  <a href="index.php">Home</a>
+  <a href="yoga.html">Yoga</a>
+  <a href="diet.html">Diet</a>
+  <a href="index.php#about">About Us</a>
+</nav>
+
+<section class="container">
+  <h1 class="main-heading">Transform Yourself – One Rep at a Time</h1>
+
+  <a href="beginner.html" class="level beginner">
+    <div class="overlay">
+      <h2>Beginner</h2>
+      <p>Start your fitness journey!</p>
+    </div>
+  </a>
+
+  <a href="intermediate.html" class="level intermediate">
+    <div class="overlay">
+      <h2>Intermediate</h2>
+      <p>Level up your training!</p>
+    </div>
+  </a>
+
+  <a href="advanced.html" class="level advanced">
+    <div class="overlay">
+      <h2>Advanced</h2>
+      <p>Train like a pro!</p>
+    </div>
+  </a>
+</section>
+
+<a href="index.php" class="back-btn">⬅️ back</a>
+
+<script>
+  function toggleNav() {
+    document.getElementById("sideNav").classList.toggle("open");
+  }
+</script>
+</body>
+</html>

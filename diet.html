@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitLife | Diet Plans</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f3f4f6;
+    }
+
+    header {
+      background-color: #1f2937;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      margin-bottom: 8px;
+    }
+
+    .card ul {
+      padding-left: 20px;
+      margin: 16px 0;
+    }
+
+    .card button {
+      background-color: #22c55e;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    .card button:hover {
+      background-color: #16a34a;
+    }
+
+    footer {
+      margin-top: 30px;
+      background-color: #1f2937;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+
+    .vegan h2 { color: #16a34a; }
+    .vegetarian h2 { color: #eab308; }
+    .mixed h2 { color: #dc2626; }
+
+    /* Side Nav */
+    .menu-icon {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      color: white;
+      z-index: 1001;
+    }
+
+    .side-nav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #1f2937f1;
+      overflow-x: hidden;
+      transition: 0.4s;
+      padding-top: 60px;
+      z-index: 1000;
+    }
+
+    .side-nav a {
+      padding: 14px 30px;
+      text-decoration: none;
+      font-size: 22px;
+      color: #ccc;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .side-nav a:hover {
+      color: white;
+      background-color: #374151;
+    }
+
+    .side-nav .close-btn {
+      position: absolute;
+      top: 15px;
+      left: 25px;
+      font-size: 36px;
+      color: white;
+    }
+
+    .side-nav.open {
+      width: 250px;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      header {
+        padding: 30px 10px;
+      }
+
+      .menu-icon {
+        font-size: 26px;
+        top: 15px;
+        right: 15px;
+      }
+
+      .card button {
+        width: 100%;
+        font-size: 1rem;
+      }
+
+      .grid {
+        padding: 10px;
+      }
+
+      footer {
+        font-size: 0.8em;
+        padding: 16px;
+      }
+
+      .card {
+        padding: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card h2 {
+        font-size: 1.2em;
+      }
+
+      .card ul {
+        font-size: 0.9em;
+      }
+
+      .card p {
+        font-size: 0.95em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Side Nav Trigger Icon -->
+  <div class="menu-icon" onclick="toggleNav()">&#9776;</div>
+
+  <!-- Side Navigation -->
+  <nav id="sideNav" class="side-nav">
+    <a href="index.php">Home</a>
+    <a href="yoga.html">Yoga</a>
+    <a href="gym2.html">Training</a>
+    <a href="index.php#about">About Us</a>
+  </nav>
+
+  <header>
+    <h1>FitLife Diet Plans</h1>
+    <p>Choose a diet that matches your lifestyle and fitness goals</p>
+  </header>
+
+  <div class="grid">
+    <!-- Vegan Diet -->
+    <div class="card vegan">
+      <h2>🌿 Vegan Diet</h2>
+      <p>No animal products. Ideal for plant-based nutrition.</p>
+      <ul>
+        <li><strong>Proteins:</strong> Lentils, Tofu, Tempeh, Chickpeas, Quinoa</li>
+        <li><strong>Carbs:</strong> Oats, Brown Rice, Sweet Potato, Fruits</li>
+        <li><strong>Fats:</strong> Avocados, Nuts, Seeds, Olive Oil</li>
+      </ul>
+      <p style="font-size: 0.9em; color: gray;">✔️ Includes B12 & Iron supplements</p>
+      <a href="vegan.html"><button>View Vegan Diet</button></a>
+    </div>
+
+    <!-- Vegetarian Diet -->
+    <div class="card vegetarian">
+      <h2>🥗 Vegetarian Diet</h2>
+      <p>Includes dairy & plant-based options.</p>
+      <ul>
+        <li><strong>Proteins:</strong> Paneer, Milk, Greek Yogurt, Soy, Dal</li>
+        <li><strong>Carbs:</strong> Roti, Rice, Fruits, Vegetables</li>
+        <li><strong>Fats:</strong> Ghee, Nuts, Seeds, Coconut Oil</li>
+      </ul>
+      <p style="font-size: 0.9em; color: gray;">✔️ High in calcium and probiotics</p>
+      <a href="veg.html"><button>View Veg Diet</button></a>
+    </div>
+
+    <!-- Mixed Diet -->
+    <div class="card mixed">
+      <h2>🍗 Mixed Diet</h2>
+      <p>Includes plant and animal sources for balanced nutrition.</p>
+      <ul>
+        <li><strong>Proteins:</strong> Chicken, Eggs, Fish, Dairy, Pulses</li>
+        <li><strong>Carbs:</strong> Whole Grains, Fruits, Vegetables</li>
+        <li><strong>Fats:</strong> Fish Oil, Ghee, Nuts, Avocados</li>
+      </ul>
+      <p style="font-size: 0.9em; color: gray;">✔️ High protein with omega-3 benefits</p>
+      <a href="mixed.html"><button>View Mixed Diet</button></a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 FitLife. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Side Nav -->
+  <script>
+    function toggleNav() {
+      document.getElementById("sideNav").classList.toggle("open");
+    }
+  </script>
+</body>
+</html>

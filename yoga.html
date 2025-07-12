@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FitLife 28-Day Yoga Journey</title>
+  <style>
+     * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      margin: 20px;
+      color: #333;
+      margin:0;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 35px;
+      text-align: center;
+      height: 130px;
+    }
+    .day-container {
+      display: flex;
+      background: white;
+      margin: 20px 0;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .day-left {
+      width: 30%;
+      padding: 20px;
+      border-right: 2px solid #ccc;
+      background-color: #fafafa;
+    }
+
+    .day-left h2 {
+      color: #e67e22;
+      margin-bottom: 15px;
+    }
+
+    .day-left ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .day-left li {
+      background: #f2f2f2;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .day-right {
+      width: 70%;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .day-right .content {
+      width: 100%;
+    }
+
+    .day-right p {
+      margin-bottom: 10px;
+    }
+
+    .day-right strong {
+      color: #2c3e50;
+    }
+    footer {
+      background: #333;
+      color: #ccc;
+      text-align: center;
+      padding: 30px;
+      margin-top: 40px;
+      font-size: 0.9em;
+      height: 80px;
+    }
+    /* Sliding Navigation Styles */
+    .menu-icon {
+      font-size: 30px;
+      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      color: #8d8787;
+    }
+
+    .side-nav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #353434ae;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      z-index: 999;
+    }
+
+    .side-nav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #fff;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .side-nav a:hover {
+      color: #f1f1f1;
+      background-color:  #353434bb;
+    }
+
+    .side-nav .close-btn {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px 15px;
+      font-size: 36px;
+      color: #fff;
+      background-color: transparent;
+      border: none;
+    }
+
+    .side-nav.open {
+      width: 250px;
+    }
+    .asana-category {
+      margin-top: 40px;
+      margin-left: 10px;
+    }
+    
+    .asana-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px 0;
+    }
+
+    .asana-list li {
+      background: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      list-style: none;
+    }
+    .asana-list li:hover{
+     background-color: #f9fbfdc5;
+    }
+    .day_schedule{
+      text-shadow: #333;
+      margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+<!-- Hamburger Menu Icon -->
+<div class="menu-icon" onclick="toggleNav()">&#9776;</div>
+
+<!-- Sliding Navigation -->
+<nav id="sideNav" class="side-nav">
+  <!-- <button class="close-btn" onclick="toggleNav()">&times;</button> -->
+  <a href="index.php">Home</a>
+  <!-- <a href="yoga.html">Yoga</a> -->
+  <a href="gym2.html">Training</a>
+  <a href="diet.html">Diet</a>
+  <a href="index.php#about">About Us</a>
+</nav>
+<header>
+  <h1>FitLife - Complete Yoga Asanas List</h1>
+  <p>Discover Yoga Asanas categorized for ease and flow</p>
+</header>
+  <!-- <h1>FitLife 28-Day Yoga Journey</h1>
+  <p style="text-align:center; font-size:1.1em;">Practice 3 Asanas a Day for a Complete Yoga Experience</p> -->
+    <section class="asana-category">
+        <h2>Standing Asanas</h2>
+        <ul class="asana-list">
+          <li>Tadasana (Mountain Pose)</li>
+          <li>Vrikshasana (Tree Pose)</li>
+          <li>Utkatasana (Chair Pose)</li>
+          <li>Trikonasana (Triangle Pose)</li>
+          <li>Parivrtta Trikonasana (Revolved Triangle Pose)</li>
+          <li>Ardha Chandrasana (Half Moon Pose)</li>
+          <li>Virabhadrasana I (Warrior I Pose)</li>
+          <li>Virabhadrasana II (Warrior II Pose)</li>
+          <li>Virabhadrasana III (Warrior III Pose)</li>
+          <li>Parsvakonasana (Side Angle Pose)</li>
+          <li>Parivrtta Parsvakonasana (Revolved Side Angle Pose)</li>
+          <li>Prasarita Padottanasana (Wide-Legged Forward Bend)</li>
+          <li>Uttanasana (Standing Forward Bend)</li>
+          <li>Padangusthasana (Big Toe Pose)</li>
+          <li>Padahastasana (Hand Under Foot Pose)</li>
+          <li>Skandasana (Side Lunge)</li>
+          <li>Malasana (Garland Pose)</li>
+        </ul>
+      
+        <h2>Seated Asanas</h2>
+        <ul class="asana-list">
+          <li>Baddha Konasana (Bound Angle Pose)</li>
+          <li>Upavistha Konasana (Wide-Angle Seated Forward Bend)</li>
+          <li>Dandasana (Staff Pose)</li>
+          <li>Paschimottanasana (Seated Forward Bend)</li>
+          <li>Purvottanasana (Upward Plank Pose)</li>
+          <li>Ardha Matsyendrasana (Half Lord of the Fishes Pose)</li>
+          <li>Marichyasana (Marichi’s Pose)</li>
+          <li>Bharadvajasana (Bharadvaja's Twist)</li>
+          <li>Gomukhasana (Cow Face Pose)</li>
+          <li>Vajrasana (Thunderbolt Pose)</li>
+          <li>Supta Vajrasana (Reclining Thunderbolt Pose)</li>
+          <li>Virasana (Hero Pose)</li>
+          <li>Supta Virasana (Reclining Hero Pose)</li>
+          <li>Mandukasana (Frog Pose)</li>
+          <li>Simhasana (Lion Pose)</li>
+          <li>Matsyasana (Fish Pose)</li>
+          <li>Sukhasana (Easy Pose)</li>
+          <li>Padmasana (Lotus Pose)</li>
+          <li>Siddhasana (Accomplished Pose)</li>
+          <li>Svastikasana (Auspicious Pose)</li>
+          <li>Yoga Mudrasana</li>
+          <li>Kurmasana (Tortoise Pose)</li>
+          <li>Supta Padangusthasana (Reclining Hand to Big Toe Pose)</li>
+          <li>Ananda Balasana (Happy Baby Pose)</li>
+          <li>Agnistambhasana (Fire Log Pose)</li>
+        </ul>
+      
+        <h2>Balancing Asanas</h2>
+        <ul class="asana-list">
+          <li>Natarajasana (Dancer’s Pose)</li>
+          <li>Garudasana (Eagle Pose)</li>
+          <li>Tolasana (Scale Pose)</li>
+          <li>Kakasana (Crow Pose)</li>
+          <li>Bakasana (Crane Pose)</li>
+          <li>Tittibhasana (Firefly Pose)</li>
+          <li>Astavakrasana (Eight-Angle Pose)</li>
+          <li>Bhujapidasana (Shoulder-Pressing Pose)</li>
+          <li>Pincha Mayurasana (Feathered Peacock Pose)</li>
+          <li>Adho Mukha Vrksasana (Handstand)</li>
+          <li>Sirsasana (Headstand)</li>
+          <li>Koundinyasana (Sage Koundinya’s Pose)</li>
+        </ul>
+      
+        <h2>Backbends</h2>
+        <ul class="asana-list">
+          <li>Setu Bandhasana (Bridge Pose)</li>
+          <li>Chakrasana (Wheel Pose)</li>
+          <li>Urdhva Dhanurasana (Upward Bow Pose)</li>
+          <li>Dhanurasana (Bow Pose)</li>
+          <li>Bhujangasana (Cobra Pose)</li>
+          <li>Urdhva Mukha Svanasana (Upward-Facing Dog)</li>
+          <li>Ustrasana (Camel Pose)</li>
+          <li>Laghu Vajrasana (Little Thunderbolt Pose)</li>
+          <li>Kapotasana (Pigeon Pose)</li>
+          <li>Eka Pada Rajakapotasana (One-Legged King Pigeon Pose)</li>
+          <li>Hanumanasana (Monkey Pose)</li>
+          <li>Rajakapotasana (King Pigeon Pose)</li>
+          <li>Parighasana (Gate Pose)</li>
+          <li>Vatayanasana (Horse Pose)</li>
+        </ul>
+      
+        <h2>Inversions</h2>
+        <ul class="asana-list">
+          <li>Halasana (Plow Pose)</li>
+          <li>Karnapidasana (Ear Pressure Pose)</li>
+          <li>Sarvangasana (Shoulder Stand)</li>
+          <li>Viparita Karani (Legs-up-the-Wall Pose)</li>
+        </ul>
+      
+        <h2>Core Asanas</h2>
+        <ul class="asana-list">
+          <li>Salabhasana (Locust Pose)</li>
+          <li>Makarasana (Crocodile Pose)</li>
+          <li>Naukasana (Boat Pose)</li>
+          <li>Paripurna Navasana (Full Boat Pose)</li>
+          <li>Ardha Navasana (Half Boat Pose)</li>
+        </ul>
+      
+        <h2>Arm Balances</h2>
+        <ul class="asana-list">
+          <li>Mayurasana (Peacock Pose)</li>
+          <li>Hamsasana (Swan Pose)</li>
+        </ul>
+      
+        <h2>More Asanas</h2>
+        <ul class="asana-list">
+          <li>Pashasana (Noose Pose)</li>
+          <li>Baddha Padmasana (Bound Lotus Pose)</li>
+          <li>Yoganidrasana (Yogic Sleep Pose)</li>
+          <li>Shavasana (Corpse Pose)</li>
+        </ul>
+      </section>
+      <h1 class="day_schedule" style="text-align:center;">Practice 3 Asanas a Day for a Complete Yoga Experience </h1>
+  <div id="yoga-schedule"></div>
+  
+  <footer>
+    © 2025 FitLife. All rights reserved.
+  </footer>
+
+  <script>
+    const days = [
+      { asanas: ["Tadasana", "Vrikshasana", "Utkatasana"], details: [
+        { duration: "2 min", breath: "Deep", release: "Slowly release legs", position: "Standing" },
+        { duration: "2 min", breath: "Deep", release: "Slowly release legs", position: "Standing" },
+        { duration: "1 min", breath: "Normal", release: "Uncross legs slowly", position: "Seated" }
+      ]},
+      { asanas: ["Trikonasana", "Virabhadrasana I", "Virabhadrasana II"], details: [
+        { duration: "3 min", breath: "Deep", release: "Return to center slowly", position: "Standing" },
+        { duration: "3 min", breath: "Deep", release: "Slowly release legs", position: "Standing" },
+        { duration: "3 min", breath: "Normal", release: "Slowly unwind", position: "Standing" }
+      ]},
+      { asanas: ["Virabhadrasana III", "Parsvakonasana", "Parivrtta Trikonasana"], details: [
+        { duration: "2 min", breath: "Normal", release: "Return to standing position", position: "Standing" },
+        { duration: "3 min", breath: "Normal", release: "Release from the pose slowly", position: "Standing" },
+        { duration: "2 min", breath: "Normal", release: "Return to neutral position", position: "Standing" }
+      ]},
+      { asanas: ["Utthita Hasta Padangusthasana", "Sukhasana", "Padmasana"], details: [
+        { duration: "1 min", breath: "Deep", release: "Slowly bring leg down", position: "Standing" },
+        { duration: "3 min", breath: "Normal", release: "Release legs slowly", position: "Seated" },
+        { duration: "3 min", breath: "Normal", release: "Uncross legs slowly", position: "Seated" }
+      ]},
+      { asanas: ["Ardha Padmasana", "Vajrasana", "Baddha Konasana"], details: [
+        { duration: "2 min", breath: "Deep", release: "Release legs slowly", position: "Seated" },
+        { duration: "2 min", breath: "Deep", release: "Release legs slowly", position: "Seated" },
+        { duration: "2 min", breath: "Deep", release: "Release slowly", position: "Seated" }
+      ]},
+      { asanas: ["Upavistha Konasana", "Paschimottanasana", "Janu Sirsasana"], details: [
+        { duration: "2 min", breath: "Deep", release: "Slowly release from forward bend", position: "Seated" },
+        { duration: "3 min", breath: "Deep", release: "Slowly unwind from forward fold", position: "Seated" },
+        { duration: "3 min", breath: "Deep", release: "Slowly unwind", position: "Seated" }
+      ]},
+      { asanas: ["Marichyasana", "Gomukhasana", "Bakasana"], details: [
+        { duration: "2 min", breath: "Normal", release: "Unwind legs slowly", position: "Seated" },
+        { duration: "3 min", breath: "Normal", release: "Release legs slowly", position: "Seated" },
+        { duration: "1 min", breath: "Normal", release: "Slowly come down", position: "Balancing" }
+      ]},
+      { asanas: ["Kakasana", "Eka Pada Galavasana", "Mayurasana"], details: [
+        { duration: "1 min", breath: "Normal", release: "Slowly come out of the pose", position: "Balancing" },
+        { duration: "2 min", breath: "Normal", release: "Uncross legs slowly", position: "Balancing" },
+        { duration: "3 min", breath: "Normal", release: "Release pose slowly", position: "Balancing" }
+      ]},
+      { asanas: ["Kukkutasana", "Tolasana", "Natarajasana"], details: [
+        { duration: "2 min", breath: "Normal", release: "Slowly lower down", position: "Balancing" },
+        { duration: "2 min", breath: "Deep", release: "Slowly release arms", position: "Balancing" },
+        { duration: "3 min", breath: "Normal", release: "Return to neutral", position: "Standing" }
+      ]},
+      { asanas: ["Garudasana", "Vasisthasana", "Sirsasana"], details: [
+        { duration: "2 min", breath: "Deep", release: "Slowly unwind", position: "Standing" },
+        { duration: "2 min", breath: "Deep", release: "Return to neutral position", position: "Balancing" },
+        { duration: "3 min", breath: "Normal", release: "Slowly come down", position: "Inverted" }
+      ]},
+
+   { asanas: ["Sarvangasana", "Halasana", "Pincha Mayurasana"], details: [
+      { duration: "2 min", breath: "Deep", release: "Slowly come down", position: "Inverted" },
+      { duration: "3 min", breath: "Normal", release: "Slowly unwind", position: "Inverted" },
+      { duration: "2 min", breath: "Normal", release: "Release slowly", position: "Inverted" }
+    ]},
+    { asanas: ["Adho Mukha Vrksasana", "Viparita Karani", "Karnapidasana"], details: [
+      { duration: "2 min", breath: "Normal", release: "Slowly come down", position: "Inverted" },
+      { duration: "3 min", breath: "Deep", release: "Slowly return to seated", position: "Inverted" },
+      { duration: "2 min", breath: "Normal", release: "Unwind from the pose slowly", position: "Inverted" }
+    ]},
+    { asanas: ["Urdhva Padmasana", "Pindasana", "Setu Bandha Sarvangasana"], details: [
+      { duration: "3 min", breath: "Normal", release: "Slowly return to seated", position: "Inverted" },
+      { duration: "2 min", breath: "Deep", release: "Slowly lower legs", position: "Inverted" },
+      { duration: "3 min", breath: "Deep", release: "Slowly unwind", position: "Inverted" }
+    ]},
+    { asanas: ["Bhujangasana", "Urdhva Mukha Svanasana", "Dhanurasana"], details: [
+      { duration: "2 min", breath: "Normal", release: "Release pose slowly", position: "Prone" },
+      { duration: "2 min", breath: "Deep", release: "Slowly come down", position: "Prone" },
+      { duration: "3 min", breath: "Normal", release: "Slowly unwind", position: "Prone" }
+    ]},
+    { asanas: ["Ustrasana", "Salabhasana", "Matsyasana"], details: [
+      { duration: "2 min", breath: "Normal", release: "Slowly lower back", position: "Prone" },
+      { duration: "2 min", breath: "Deep", release: "Release legs slowly", position: "Prone" },
+      { duration: "3 min", breath: "Normal", release: "Slowly come up", position: "Prone" }
+    ]},
+    { asanas: ["Chakrasana", "Setu Bandhasana", "Eka Pada Rajakapotasana"], details: [
+      { duration: "3 min", breath: "Deep", release: "Slowly return to neutral", position: "Prone" },
+      { duration: "2 min", breath: "Normal", release: "Lower the body slowly", position: "Backbending" },
+      { duration: "2 min", breath: "Deep", release: "Slowly unwind", position: "Seated" }
+    ]},
+    { asanas: ["Natarajasana", "Uttanasana", "Padahastasana"], details: [
+      { duration: "2 min", breath: "Deep", release: "Slowly release", position: "Standing" },
+      { duration: "2 min", breath: "Normal", release: "Release from forward fold slowly", position: "Standing" },
+      { duration: "2 min", breath: "Normal", release: "Slowly unwind", position: "Standing" }
+    ]},
+    { asanas: ["Parsvottanasana", "Kurmasana", "Balasana"], details: [
+      { duration: "3 min", breath: "Deep", release: "Slowly rise from the fold", position: "Standing" },
+      { duration: "2 min", breath: "Normal", release: "Slowly release", position: "Seated" },
+      { duration: "3 min", breath: "Deep", release: "Rest and relax", position: "Seated" }
+    ]},
+    { asanas: ["Ardha Matsyendrasana", "Bharadvajasana", "Marichyasana III"], details: [
+      { duration: "2 min", breath: "Normal", release: "Slowly unwind", position: "Seated" },
+      { duration: "2 min", breath: "Normal", release: "Release slowly", position: "Seated" },
+      { duration: "2 min", breath: "Normal", release: "Unwind slowly", position: "Seated" }
+    ]},
+    { asanas: ["Parivrtta Trikonasana", "Parivrtta Parsvakonasana", "Supta Matsyendrasana"], details: [
+      { duration: "3 min", breath: "Deep", release: "Unwind slowly", position: "Standing" },
+      { duration: "2 min", breath: "Normal", release: "Release slowly", position: "Standing" },
+      { duration: "3 min", breath: "Normal", release: "Unwind slowly", position: "Supine" }
+    ]},
+    { asanas: ["Jathara Parivartanasana", "Matsyendrasana", "Savasana"], details: [
+      { duration: "2 min", breath: "Deep", release: "Unwind slowly", position: "Supine" },
+      { duration: "3 min", breath: "Deep", release: "Slowly return to neutral", position: "Seated" },
+      { duration: "5 min", breath: "Normal", release: "Rest", position: "Supine" }
+    ]},
+    { asanas: ["Supta Baddha Konasana", "Viparita Karani", "Supported Bridge Pose"], details: [
+      { duration: "3 min", breath: "Deep", release: "Slowly come down", position: "Supine" },
+      { duration: "2 min", breath: "Normal", release: "Slowly release from inversion", position: "Inverted" },
+      { duration: "2 min", breath: "Deep", release: "Release pose slowly", position: "Supine" }
+    ]},
+    { asanas: ["Reclining Twist", "Supta Virasana", "Makarasana"], details: [
+      { duration: "2 min", breath: "Normal", release: "Release twist slowly", position: "Supine" },
+      { duration: "2 min", breath: "Normal", release: "Release from virasana", position: "Seated" },
+      { duration: "3 min", breath: "Deep", release: "Relax in pose", position: "Prone" }
+    ]},
+    { asanas: ["Ananda Balasana", "Malasana", "Parighasana"], details: [
+      { duration: "3 min", breath: "Deep", release: "Slowly release from the pose", position: "Supine" },
+      { duration: "2 min", breath: "Normal", release: "Release squat slowly", position: "Seated" },
+      { duration: "2 min", breath: "Normal", release: "Come out of the stretch slowly", position: "Standing" }
+    ]},
+    { asanas: ["Simhasana", "Shashankasana", "Astavakrasana"], details: [
+      { duration: "2 min", breath: "Deep", release: "Slowly release", position: "Seated" },
+      { duration: "2 min", breath: "Deep", release: "Release slowly", position: "Seated" },
+      { duration: "2 min", breath: "Normal", release: "Slowly release from the pose", position: "Seated" }
+    ]},
+    { asanas: ["Chaturanga Dandasana", "Hanumanasana", "Parvatasana"], details: [
+      { duration: "2 min", breath: "Normal", release: "Slowly lower down", position: "Prone" },
+      { duration: "2 min", breath: "Deep", release: "Slowly come out of split", position: "Standing" },
+      { duration: "3 min", breath: "Deep", release: "Slowly unwind", position: "Standing" }
+    ]},
+    { asanas: ["Adho Mukha Svanasana", "Paryankasana", "Purvottanasana"], details: [
+      { duration: "2 min", breath: "Deep", release: "Slowly return to neutral", position: "Downward-facing dog" },
+      { duration: "2 min", breath: "Normal", release: "Come out of the stretch slowly", position: "Seated" },
+      { duration: "2 min", breath: "Normal", release: "Slowly return to neutral", position: "Seated" }
+    ]},
+    { asanas: ["Rajakapotasana", "Urdhva Dhanurasana"], details: [
+      { duration: "3 min", breath: "Deep", release: "Slowly unwind", position: "Seated" },
+      { duration: "2 min", breath: "Normal", release: "Slowly lower down", position: "Backbending" }
+    ]}
+  ];
+
+  const container = document.getElementById("yoga-schedule");
+
+  days.forEach((day, index) => {
+    const dayBox = document.createElement("div");
+    dayBox.className = "day-container";
+
+    const left = document.createElement("div");
+    left.className = "day-left";
+
+    const right = document.createElement("div");
+    right.className = "day-right";
+
+    const content = document.createElement("div");
+    content.className = "content";
+
+    const h2 = document.createElement("h2");
+    h2.textContent = `Day ${index + 1}`;
+    left.appendChild(h2);
+
+    const ul = document.createElement("ul");
+    day.asanas.forEach((asana, idx) => {
+      const li = document.createElement("li");
+      li.textContent = asana;
+      ul.appendChild(li);
+
+      const desc = document.createElement("p");
+      desc.innerHTML = `
+        <strong>Duration:</strong> ${day.details[idx].duration} | 
+        <strong>Breath:</strong> ${day.details[idx].breath} | 
+        <strong>Release:</strong> ${day.details[idx].release} | 
+        <strong>Position:</strong> ${day.details[idx].position}
+      `;
+      content.appendChild(desc);
+    });
+
+    left.appendChild(ul);
+    right.appendChild(content);
+    dayBox.appendChild(left);
+    dayBox.appendChild(right);
+    container.appendChild(dayBox);
+  });
+
+</script>
+<script>
+  function toggleNav() {
+    document.getElementById("sideNav").classList.toggle("open");
+  }
+</script>
+</body>
+</html>
